@@ -4,6 +4,7 @@ import imdb from '../assets/images/IMDB.png';
 import tomato from '../assets/images/tomato.png';
 import Rating from './Ratings';
 import { MOVIE_DETAILS } from '../lib/data';
+import FavouriteIcon from '../assets/icons/favouriteIcon';
 
 const FeaturedSection = () => {
   return (
@@ -23,8 +24,12 @@ const FeaturedSection = () => {
             to=""
             data-testid="movie-card"
             key={detail.id}
-            className="w-full flex flex-col gap-2"
+            className="w-full flex flex-col gap-2 relative"
           >
+            <p className="absolute top-[4%] left-[5%] bg-[#F3F4F6] px-2 py-[3px] rounded-xl text-xs font-bold text-[#111827] opacity-50">
+              TV SERIES
+            </p>
+            <FavouriteIcon className="absolute top-[3%] right-[5%]" />
             <img
               src={detail.cover}
               alt="movie-poster"
