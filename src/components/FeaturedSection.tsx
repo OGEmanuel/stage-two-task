@@ -20,16 +20,15 @@ const FeaturedSection = () => {
       </div>
       <div className="grid w-full grid-cols-[repeat(auto-fit,_minmax(12rem,_1fr))] gap-20">
         {MOVIE_DETAILS.map(detail => (
-          <Link
-            to=""
+          <div
             data-testid="movie-card"
             key={detail.id}
             className="w-full flex flex-col gap-2 relative"
           >
-            <p className="absolute top-[4%] left-[5%] bg-[#F3F4F6] px-2 py-[3px] rounded-xl text-xs font-bold text-[#111827] opacity-50">
+            <p className="absolute top-[4%] left-[7%] bg-[#F3F4F6] px-2 py-[3px] rounded-xl text-xs font-bold text-[#111827] opacity-50">
               TV SERIES
             </p>
-            <FavouriteIcon className="absolute top-[3%] right-[5%]" />
+            <FavouriteIcon className="absolute top-[3%] right-[7%]" />
             <img
               src={detail.cover}
               alt="movie-poster"
@@ -41,18 +40,19 @@ const FeaturedSection = () => {
             >
               {detail.releaseDate}
             </p>
-            <p
+            <Link
+              to=""
               data-testid="movie-title"
               className="text-lg font-bold text-[#111827]"
             >
               {detail.movieTitle}
-            </p>
+            </Link>
             <div className="text-xs flex items-center justify-between">
               <Rating rating={detail.IMDB} src={imdb} />
               <Rating rating={detail.tomato} src={tomato} />
             </div>
             <p className="text-xs font-bold text-[#9CA3AF]">{detail.genre}</p>
-          </Link>
+          </div>
         ))}
       </div>
     </section>
