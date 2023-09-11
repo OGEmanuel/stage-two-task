@@ -3,11 +3,12 @@ import PlayIcon from '../assets/icons/playIcon';
 import SearchIcon from '../assets/icons/serachIcon';
 import Logo from './Logo';
 import imdb from '../assets/images/IMDB.png';
-import tomatologo from '../assets/images/tomato.png';
+import tomato from '../assets/images/tomato.png';
+import Rating from './Ratings';
 
 const HeroSection = () => {
   return (
-    <section className="bg-poster bg-auto bg-no-repeat bg-center px-40 text-white pt-2.5 pb-40 relative">
+    <section className="bg-poster bg-auto bg-no-repeat bg-center px-40 text-white pt-2.5 pb-40 mb-16 relative">
       <div className="flex justify-between items-center mb-20">
         <Logo />
         <div className="relative w-max">
@@ -26,14 +27,8 @@ const HeroSection = () => {
       <div className="w-[404px] flex flex-col gap-4">
         <h1 className="font-bold text-5xl">John Wick 3 : Parabellum</h1>
         <div className="flex gap-7 text-xs">
-          <div className="flex gap-[10px] items-center">
-            <img src={imdb} alt="imdb logo" />
-            <p>86.0 / 100</p>
-          </div>
-          <div className="flex gap-[10px] items-center">
-            <img src={tomatologo} alt="tomato logo" className="w-full" />
-            <p>97%</p>
-          </div>
+          <Rating rating="86.0 / 100" src={imdb} />
+          <Rating rating="97%" src={tomato} />
         </div>
         <p className="font-medium text-sm leading-[18px] w-[302px]">
           John Wick is on the run after killing a member of the international
